@@ -2,7 +2,7 @@
 using System.Linq;
 using BettanyPieShop.Interfaces.Models;
 
-namespace BettanyPieShop.Models
+namespace BettanyPieShop.Models.Mocks
 {
     public class MockPieRepository : IPieRepository
     {
