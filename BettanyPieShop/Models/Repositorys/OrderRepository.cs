@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using BettanyPieShop.Interfaces.Models;
-using BettanyPieShop.Models.Contexts;
+using BethanysPieShop.Interfaces.Models;
+using BethanysPieShop.Models.Contexts;
 
-namespace BettanyPieShop.Models.Repositorys
+namespace BethanysPieShop.Models.Repositorys
 {
     public class OrderRepository : IOrderRepository
     {

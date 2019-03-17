@@ -3,7 +3,7 @@ using Microsoft.Extensions.DependencyInjection;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace BettanyPieShop.Models.Contexts
+namespace BethanysPieShop.Models.Contexts
 {
     public static class DbInitializer
     {

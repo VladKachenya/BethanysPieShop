@@ -2,12 +2,12 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using BettanyPieShop.Interfaces.Models;
-using BettanyPieShop.Models;
-using BettanyPieShop.ViewModels;
+using BethanysPieShop.Interfaces.Models;
+using BethanysPieShop.Models;
+using BethanysPieShop.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 
-namespace BettanyPieShop.Controllers
+namespace BethanysPieShop.Controllers
 {
     [Route("api/[controller]")]
     public class PieDataController : Controller

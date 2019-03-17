@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
-namespace BettanyPieShop.Models
+namespace BethanysPieShop.Models
 {
     public class Order
     {

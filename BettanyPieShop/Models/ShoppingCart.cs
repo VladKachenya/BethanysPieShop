@@ -1,12 +1,12 @@
-﻿using BettanyPieShop.Models.Contexts;
-using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Http;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using BethanysPieShop.Models.Contexts;
 
-namespace BettanyPieShop.Models
+namespace BethanysPieShop.Models
 {
     public class ShoppingCart
     {

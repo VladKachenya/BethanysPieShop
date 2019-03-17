@@ -1,9 +1,9 @@
 ﻿using System.Collections.Generic;
-using BettanyPieShop.Models;
-using BettanyPieShop.ViewModels;
+using BethanysPieShop.Models;
+using BethanysPieShop.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 
-namespace BettanyPieShop.Components
+namespace BethanysPieShop.Components
 {
     public class ShoppingCartSummary : ViewComponent
     {

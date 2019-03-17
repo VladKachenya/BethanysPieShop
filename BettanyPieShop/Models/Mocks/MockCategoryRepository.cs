@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
-using BettanyPieShop.Interfaces.Models;
+using BethanysPieShop.Interfaces.Models;
 
-namespace BettanyPieShop.Models.Mocks
+namespace BethanysPieShop.Models.Mocks
 {
     //public class MockCategoryRepository : ICategoryRepository
     //{

@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using BettanyPieShop.Interfaces.Models;
+using BethanysPieShop.Interfaces.Models;
 using Microsoft.AspNetCore.Mvc;
 
-namespace BettanyPieShop.Components
+namespace BethanysPieShop.Components
 {
     public class CategoryMenu : ViewComponent
     {

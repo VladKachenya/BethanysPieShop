@@ -1,4 +1,4 @@
-﻿namespace BettanyPieShop.Models
+﻿namespace BethanysPieShop.Models
 {
     public class ShoppingCartItem
     {

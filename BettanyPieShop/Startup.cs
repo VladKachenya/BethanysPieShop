@@ -1,7 +1,7 @@
-﻿using BettanyPieShop.Interfaces.Models;
-using BettanyPieShop.Models;
-using BettanyPieShop.Models.Contexts;
-using BettanyPieShop.Models.Repositorys;
+﻿using BethanysPieShop.Interfaces.Models;
+using BethanysPieShop.Models;
+using BethanysPieShop.Models.Contexts;
+using BethanysPieShop.Models.Repositorys;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace BettanyPieShop
+namespace BethanysPieShop
 {
     public class Startup
     {

@@ -1,10 +1,10 @@
 ﻿using System.Linq;
-using BettanyPieShop.Interfaces.Models;
-using BettanyPieShop.Models;
-using BettanyPieShop.ViewModels;
+using BethanysPieShop.Interfaces.Models;
+using BethanysPieShop.Models;
+using BethanysPieShop.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 
-namespace BettanyPieShop.Controllers
+namespace BethanysPieShop.Controllers
 {
     public class ShoppingCartController : Controller
     {

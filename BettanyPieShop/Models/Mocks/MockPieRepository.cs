@@ -1,8 +1,8 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
-using BettanyPieShop.Interfaces.Models;
+using BethanysPieShop.Interfaces.Models;
 
-namespace BettanyPieShop.Models.Mocks
+namespace BethanysPieShop.Models.Mocks
 {
     //public class MockPieRepository : IPieRepository
     //{

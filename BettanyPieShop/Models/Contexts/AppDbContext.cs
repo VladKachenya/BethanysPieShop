@@ -2,7 +2,7 @@
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
-namespace BettanyPieShop.Models.Contexts
+namespace BethanysPieShop.Models.Contexts
 {
     public class AppDbContext : IdentityDbContext<IdentityUser>
     {

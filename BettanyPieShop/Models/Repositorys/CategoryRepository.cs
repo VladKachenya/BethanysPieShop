@@ -1,8 +1,8 @@
 ﻿using System.Collections.Generic;
-using BettanyPieShop.Interfaces.Models;
-using BettanyPieShop.Models.Contexts;
+using BethanysPieShop.Interfaces.Models;
+using BethanysPieShop.Models.Contexts;
 
-namespace BettanyPieShop.Models.Repositorys
+namespace BethanysPieShop.Models.Repositorys
 {
     public class CategoryRepository : ICategoryRepository
     {

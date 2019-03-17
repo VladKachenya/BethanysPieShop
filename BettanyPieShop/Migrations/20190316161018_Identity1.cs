@@ -2,7 +2,7 @@
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 
-namespace BettanyPieShop.Migrations
+namespace BethanysPieShop.Migrations
 {
     public partial class Identity1 : Migration
     {

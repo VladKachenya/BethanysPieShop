@@ -1,6 +1,6 @@
-﻿using BettanyPieShop.Models;
+﻿using BethanysPieShop.Models;
 
-namespace BettanyPieShop.ViewModels
+namespace BethanysPieShop.ViewModels
 {
     public class ShoppingCartViewModel
     {

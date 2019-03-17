@@ -1,11 +1,11 @@
-﻿using BettanyPieShop.Models.Contexts;
-using Microsoft.AspNetCore;
+﻿using Microsoft.AspNetCore;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using System;
+using BethanysPieShop.Models.Contexts;
 
-namespace BettanyPieShop
+namespace BethanysPieShop
 {
     public class Program
     {

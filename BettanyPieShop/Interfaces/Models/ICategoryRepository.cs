@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
-using BettanyPieShop.Models;
+using BethanysPieShop.Models;
 
-namespace BettanyPieShop.Interfaces.Models
+namespace BethanysPieShop.Interfaces.Models
 {
     public interface ICategoryRepository
     {
