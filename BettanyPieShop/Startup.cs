@@ -1,4 +1,7 @@
-﻿using BethanysPieShop.Interfaces.Models;
+﻿using System;
+using System.Net;
+using BethanysPieShop.Hubs;
+using BethanysPieShop.Interfaces.Models;
 using BethanysPieShop.Models;
 using BethanysPieShop.Models.Contexts;
 using BethanysPieShop.Models.Repositorys;
@@ -9,6 +12,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+
 
 namespace BethanysPieShop
 {
@@ -38,6 +42,7 @@ namespace BethanysPieShop
             services.AddMvc();
             services.AddMemoryCache();
             services.AddSession();
+            services.AddSignalR();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -48,6 +53,10 @@ namespace BethanysPieShop
             app.UseStaticFiles();
             app.UseSession();
             app.UseAuthentication();
+            app.UseSignalR(routes =>
+            {
+                routes.MapHub<ShoppingCartHub>("/ShoppingCartCount");
+            });
 
             app.UseMvc(routes =>
             {
