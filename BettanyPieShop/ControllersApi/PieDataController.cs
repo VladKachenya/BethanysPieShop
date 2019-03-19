@@ -7,7 +7,7 @@ using BethanysPieShop.Models;
 using BethanysPieShop.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 
-namespace BethanysPieShop.Controllers
+namespace BethanysPieShop.ControllersApi
 {
     [Route("api/[controller]")]
     public class PieDataController : Controller
