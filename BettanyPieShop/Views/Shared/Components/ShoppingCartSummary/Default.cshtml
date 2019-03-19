@@ -1,14 +1,29 @@
 ﻿@model ShoppingCartViewModel
 
-
-@if (Model.ShoppingCart.ShoppingCartItems.Count > 0)
-{
-    <li>
-        <a>
-            <span class="glyphicon glyphicon-shopping-cart"></span>
-            <span id="cart-status">
-                @Model.ShoppingCart.ShoppingCartItems.Count
-            </span>
-        </a>
-    </li>
-}
+<li>
+    <a asp-controller="ShoppingCart" asp-action="Index" >
+        <span class="glyphicon glyphicon-shopping-cart"></span>
+        <span id="cart-status">
+        </span>
+        
+    </a>
+</li>
+<script src="js/signalr.min.js"></script>
+<script>
+    let hubUrl = 'https://localhost:44383/ShoppingCartCount';
+    const hubConnection = new signalR.HubConnectionBuilder()
+        .withUrl(hubUrl)
+        .build();
+ 
+    // получение сообщения от сервера
+    hubConnection.on('RefreshShopingCart', function (message) {
+ 
+        // создает элемент <p> для сообщения пользователя
+        //let elem = document.createElement("p");
+        var counter = document.getElementById("cart-status");
+        counter.innerHTML = '';
+        counter.appendChild(document.createTextNode(message));
+ 
+    });
+    hubConnection.start();
+</script>

@@ -12,8 +12,9 @@
         </div>
         <div class="addToCart">
             <p class="button">
-                <a class="btn btn-primary" asp-controller="ShoppingCart" asp-action="AddToShoppingCart" asp-route-pieId="@Model.PieId">Add to cart</a>
+                <input class="btn btn-primary" type="button" onclick="AddToShopingCart(@Model.PieId)" value="Add to cart">
             </p>
         </div>
     </div>
 </div>
+
