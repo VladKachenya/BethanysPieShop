@@ -2,9 +2,11 @@
 using System.Net;
 using BethanysPieShop.Hubs;
 using BethanysPieShop.Interfaces.Models;
+using BethanysPieShop.Interfaces.Services;
 using BethanysPieShop.Models;
 using BethanysPieShop.Models.Contexts;
 using BethanysPieShop.Models.Repositorys;
+using BethanysPieShop.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
@@ -38,6 +40,7 @@ namespace BethanysPieShop
             services.AddScoped<ShoppingCart>(sp => ShoppingCart.GetCart(sp));
             services.AddTransient<IOrderRepository, OrderRepository>();
             services.AddIdentity<IdentityUser, IdentityRole>().AddEntityFrameworkStores<AppDbContext>();
+            services.AddSingleton<ICoinMarketCapService, CoinMarketCapService>();
 
             services.AddMvc();
             services.AddMemoryCache();
