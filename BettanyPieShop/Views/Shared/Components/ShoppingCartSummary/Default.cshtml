@@ -11,7 +11,7 @@
 </li>
 <script src="js/signalr.min.js"></script>
 <script>
-    let hubUrl = 'https://localhost:44383/ShoppingCartCount';
+    let hubUrl = '/ShoppingCartCount';
     const hubConnection = new signalR.HubConnectionBuilder()
         .withUrl(hubUrl)
         .build();
