@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Net;
+using BethanysPieShop.Factorys;
 using BethanysPieShop.Hubs;
+using BethanysPieShop.Interfaces.Factorys;
 using BethanysPieShop.Interfaces.Models;
 using BethanysPieShop.Interfaces.Services;
 using BethanysPieShop.Models;
@@ -41,6 +43,9 @@ namespace BethanysPieShop
             services.AddTransient<IOrderRepository, OrderRepository>();
             services.AddIdentity<IdentityUser, IdentityRole>().AddEntityFrameworkStores<AppDbContext>();
             services.AddSingleton<ICoinMarketCapService, CoinMarketCapService>();
+            services.AddSingleton<INationalBankOfRepublicBelarusServise, NationalBankOfRepublicBelarusServise>();
+            services.AddTransient<ICurrencyConverterService, CurrencyConverterService>();
+            services.AddTransient<IPieViewModelFactory, PieViewModelFactory>();
 
             services.AddMvc();
             services.AddMemoryCache();

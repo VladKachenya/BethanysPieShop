@@ -1,28 +1,24 @@
 ﻿using BethanysPieShop.Helpers;
 using BethanysPieShop.Interfaces.Services;
+using BethanysPieShop.Services.Base;
 using System;
 using System.Net;
-using System.Threading;
 using System.Web;
 
 namespace BethanysPieShop.Services
 {
-    public class CoinMarketCapService : ICoinMarketCapService
+    public class CoinMarketCapService : ExternalApiBase, ICoinMarketCapService
     {
-        private Timer _timer;
 
         public decimal BitcoinPriceInUsd { get; protected set; }
         public string Sumbol { get; protected set; }
 
         public CoinMarketCapService()
-        {
-            TimerCallback tm = new TimerCallback(Initialization);
-            _timer = new Timer(tm, null, 0, TimeSpan.TicksPerMinute);
-        }
+            : base(null, TimeSpan.TicksPerMinute) {}
 
 
         #region reqest Area
-        protected void Initialization(object obj)
+        protected override void Initialization(object obj)
         {
             var str = MakeAPICall();
             var welcome = CoinMarketCapRequestEntity.FromJson(str);
@@ -48,8 +44,9 @@ namespace BethanysPieShop.Services
             client.Headers.Add("X-CMC_PRO_API_KEY", API_KEY);
             client.Headers.Add("Accepts", "application/json");
             return client.DownloadString(URL.ToString());
-
         }
+
+
         #endregion
 
 

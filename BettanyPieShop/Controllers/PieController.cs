@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using BethanysPieShop.Interfaces.Factorys;
 using BethanysPieShop.Interfaces.Models;
 using BethanysPieShop.Models;
 using BethanysPieShop.ViewModels;
@@ -11,11 +12,13 @@ namespace BethanysPieShop.Controllers
     {
         private readonly ICategoryRepository _categoryRepository;
         private readonly IPieRepository _pieRepository;
+        private readonly IPieViewModelFactory _pieViewModelFactory;
 
-        public PieController(ICategoryRepository categoryRepository, IPieRepository pieRepository)
+        public PieController(ICategoryRepository categoryRepository, IPieRepository pieRepository, IPieViewModelFactory pieViewModelFactory)
         {
             _categoryRepository = categoryRepository;
             _pieRepository = pieRepository;
+            _pieViewModelFactory = pieViewModelFactory;
         }
 
         public ViewResult List(string category)
@@ -38,7 +41,7 @@ namespace BethanysPieShop.Controllers
 
             return View(new PiesListViewModel
             {
-                Pies = pies,
+                Pies = _pieViewModelFactory.GetPieViewModels(pies),
                 CurrentCategory = currentCategory
             });
         }
@@ -49,7 +52,7 @@ namespace BethanysPieShop.Controllers
             if (pie == null)
                 return NotFound();
 
-            return View(pie);
+            return View(_pieViewModelFactory.GetPieViewModel(pie));
         }
     }
 }

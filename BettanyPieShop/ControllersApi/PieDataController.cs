@@ -1,11 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using BethanysPieShop.Interfaces.Models;
+﻿using BethanysPieShop.Interfaces.Models;
+using BethanysPieShop.Interfaces.Services;
 using BethanysPieShop.Models;
 using BethanysPieShop.ViewModels;
 using Microsoft.AspNetCore.Mvc;
+using System.Collections.Generic;
+using System.Linq;
+using BethanysPieShop.Interfaces.Factorys;
 
 namespace BethanysPieShop.ControllersApi
 {
@@ -13,10 +13,14 @@ namespace BethanysPieShop.ControllersApi
     public class PieDataController : Controller
     {
         private readonly IPieRepository _pieRepository;
+        private readonly ICurrencyConverterService _converterService;
+        private readonly IPieViewModelFactory _pieViewModelFactory;
 
-        public PieDataController(IPieRepository pieRepository)
+        public PieDataController(IPieRepository pieRepository, ICurrencyConverterService converterService, IPieViewModelFactory pieViewModelFactory)
         {
             _pieRepository = pieRepository;
+            _converterService = converterService;
+            _pieViewModelFactory = pieViewModelFactory;
         }
 
         [HttpGet]
@@ -24,27 +28,9 @@ namespace BethanysPieShop.ControllersApi
         {
             IEnumerable<Pie> dbPies = null;
 
-            dbPies = _pieRepository.Pies.OrderBy(p => p.PieId).Take(9);
+            dbPies = _pieRepository.Pies.OrderBy(p => p.PieId).Take(5);
 
-            List<PieViewModel> pies = new List<PieViewModel>();
-
-            foreach (var dbPie in dbPies)
-            {
-                pies.Add(MapDbPieToPieViewModel(dbPie));
-            }
-            return pies;
-        }
-
-        private PieViewModel MapDbPieToPieViewModel(Pie dbPie)
-        {
-            return new PieViewModel()
-            {
-                PieId = dbPie.PieId,
-                Name = dbPie.Name,
-                Price = dbPie.Price,
-                ShortDescription = dbPie.ShortDescription,
-                ImageThumbnailUrl = dbPie.ImageThumbnailUrl
-            };
+            return _pieViewModelFactory.GetPieViewModels(dbPies);
         }
     }
 }

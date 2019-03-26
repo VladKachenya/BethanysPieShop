@@ -7,9 +7,9 @@
 
 <div class="row">
 
-    @foreach (var pie in Model.PiesOfTheWeek)
+    @foreach (var pieViewModel in Model.PiesOfTheWeek)
     {
-        @Html.Partial("PieOfTheWeekSummary", pie)
+        @Html.Partial("PieOfTheWeekSummary", pieViewModel)
     }
 
 </div>

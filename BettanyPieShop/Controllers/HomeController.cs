@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using BethanysPieShop.Interfaces.Factorys;
 using BethanysPieShop.Interfaces.Models;
 using BethanysPieShop.Interfaces.Services;
 using BethanysPieShop.ViewModels;
@@ -13,12 +14,13 @@ namespace BethanysPieShop.Controllers
     public class HomeController : Controller
     {
         private readonly IPieRepository _pieRepository;
+        private readonly IPieViewModelFactory _pieViewModelFactory;
         private readonly ICoinMarketCapService _coinMarketCapService;
 
-        public HomeController(IPieRepository pieRepository, ICoinMarketCapService coinMarketCapService)
+        public HomeController(IPieRepository pieRepository, IPieViewModelFactory pieViewModelFactory)
         {
             _pieRepository = pieRepository;
-            _coinMarketCapService = coinMarketCapService;
+            _pieViewModelFactory = pieViewModelFactory;
         }
 
         // GET: Home
@@ -26,7 +28,7 @@ namespace BethanysPieShop.Controllers
         {
             var homeViewModel = new HomeViewModel
             {
-                PiesOfTheWeek = _pieRepository.PiesOfTheWeek
+                PiesOfTheWeek = _pieViewModelFactory.GetPieViewModels(_pieRepository.PiesOfTheWeek)
             };
 
             return View(homeViewModel);
