@@ -7,15 +7,20 @@
             <h3>
                 <a asp-controller="Pie" asp-action="Details" asp-route-id="@Model.PieId">@Model.Name</a>
             </h3>
-            <h3 class="pull-right">@Model.Price.ToString("c")</h3>
-            <h3 class="pull-right">@Model.PriceInCryptocurrency.ToString() @Model.CryptocurrencyMarc</h3>
             <p>@Model.ShortDescription</p>
+            <div class="pull-right">
+                <h4 >@Model.Price.ToString("c")</h4>
+                <h4>@Model.PriceInCryptocurrency.ToString() @Model.CryptocurrencyMarc</h4>
+            </div>
+            
         </div>
         <div class="addToCart">
             <p class="button">
                 <input class="btn btn-primary" type="button" onclick="AddToShopingCart(@Model.PieId)" value="Add to cart">
             </p>
         </div>
+        
+        
     </div>
 </div>
 

@@ -26,7 +26,7 @@ body {
 }
 
 .caption {
-    height: 130px;
+    height: auto;
     overflow: auto;
 }
 
